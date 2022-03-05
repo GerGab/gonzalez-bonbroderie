@@ -1,0 +1,16 @@
+
+.cartButton{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.num{
+    font-size: 0.8rem;
+    position: relative;
+    top: 6px;
+    left: -26px;
+    text-align: center; 
+    color: white;
+    z-index: 1;
+}

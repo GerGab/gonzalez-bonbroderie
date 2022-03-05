@@ -1,0 +1,93 @@
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.menuActive{
+    display: flex;
+    flex-direction: row;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    visibility: visible;
+}
+
+.menuBox{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 300x;
+    height: 100vh;
+    background-color: rgb(229, 197, 185);
+    padding: 20px;
+    z-index: 2;
+    transform: translateX(-300px);
+    transition:  transform 0.3s;
+    visibility: hidden;
+}
+
+.menuBoxActive{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100%;
+    padding: 25px;
+    z-index: 2;
+    background-color: rgb(229, 197, 185);
+    transform: translateX(-0px);
+    transition:  transform 0.3s;
+    visibility: visible;
+}
+
+.menuBoxActive h2{
+    margin: 20px 0;
+    text-align: center;
+}
+
+.menuBoxActive li{
+    margin: 10px 20px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.closeButton{
+    border: none;
+    background-color: transparent;
+    height: 15px;
+    width: 15px;
+    font-size: 1rem;
+    position: relative;
+    left: 260px;
+}
+
+.menuOut{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.5s;
+    border: none;
+    z-index: 1;
+    
+}
+
+.menuOutActive{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.6;
+    transition: opacity 0.5s;
+    border: none;
+    z-index: 1;
+    
+}
