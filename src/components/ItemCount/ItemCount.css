@@ -1,0 +1,49 @@
+
+.itemCount{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px grey;
+    border-radius: 10px;
+    width: 160px;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.counter{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemCount button{
+    width: 90%;
+    text-align: center;
+    background-color: rgb(229, 197, 185);
+    font-size: 0.8rem;
+    border: none;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.counter p{
+    width: 40%;
+    height: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.counter button{
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    padding: 0;
+}
+
+.counter button p{
+    font-size: 1.5rem;
+    width: 100%;
+}
+
