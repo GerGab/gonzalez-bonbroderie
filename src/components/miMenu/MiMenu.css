@@ -1,5 +1,6 @@
 
 .menu{
+    position: fixed;
     display: flex;
     flex-direction: row;
     left:0;
@@ -10,6 +11,7 @@
 }
 
 .menuActive{
+    position: fixed;
     display: flex;
     flex-direction: row;
     left:0;

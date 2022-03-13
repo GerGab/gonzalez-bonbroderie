@@ -4,7 +4,7 @@
     flex-direction: column;
     border: solid 1px grey;
     border-radius: 10px;
-    width: 160px;
+    width: 80%;
     height: 80px;
     justify-content: space-around;
     align-items: center;
@@ -24,26 +24,33 @@
     background-color: rgb(229, 197, 185);
     font-size: 0.8rem;
     border: none;
-    padding: 2px;
     border-radius: 3px;
 }
 
+.itemCount button:hover{
+    color: white;
+}
+
 .counter p{
-    width: 40%;
-    height: 20px;
-    font-size: 1.5rem;
+    height: 30px;
+    font-size: 1.2rem;
     text-align: center;
+    padding-top: 10px;
 }
 
 .counter button{
     background-color: transparent;
     border: none;
-    font-size: 2rem;
     padding: 0;
+}
+.counter button:hover{
+    color: gray;
 }
 
 .counter button p{
-    font-size: 1.5rem;
+    font-size: 2rem;
     width: 100%;
+    text-align: center;
+    padding-top: 0;
 }
 
