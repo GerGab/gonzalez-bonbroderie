@@ -7,12 +7,12 @@ function ItemCount({stock,nombre}) {
     const [count,setCount] = useState(1)
     const [_stock,setStock] = useState(stock)
     const sumCount = () =>{
-        if (count<_stock){
+        if (count<_stock ){
             setCount(count + 1);
         }
     }
     const restCount = () =>{
-        if (count>0){
+        if (count>1 ){
             setCount(count - 1);
         }
     }
@@ -24,8 +24,9 @@ function ItemCount({stock,nombre}) {
     useEffect(()=>{
         _stock>0 ? setCount(1):setCount(0);
     },[_stock])
-    
-
+    useEffect(()=>{
+        setStock(stock);
+    },[stock,nombre])
 
   return (
     <div className='itemCount'>

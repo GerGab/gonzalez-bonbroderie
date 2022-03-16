@@ -1,14 +1,25 @@
 import React from 'react'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/navbar/NavBar'
+import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './ItemListContainer/ItemListContainer'
 
 function App() {
   return (
-    <>
-    <NavBar/>
-    <ItemListContainer gretting={"HOLA MUNDO ESTO ES BONBRODERIE"}/>
-    </>
+    <BrowserRouter>
+    
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/detalle/:categoria&:id' element={<ItemDetailContainer/>}/>
+        <Route path='/*' element={<Navigate to='/'/>}/>
+      </Routes>
+          
+    
+    </BrowserRouter>
+
   )
 }
 

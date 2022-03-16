@@ -1,20 +1,19 @@
+import './MiniItem.css'
 import { Link } from "react-router-dom";
-import "./Item.css"
+function MiniItem({item}) {
 
-function Item({item}) {
     const {nombre,precio,image,id,categoria} = item;
 
   return (
-
-      <div className="Item">
+    <div className="miniItem">
           
           <Link to={`/detalle/${categoria}&${id}`}>
             <img src={image} alt={nombre} />
           </Link>
           <h4>{nombre}</h4>
-          <h3>{`$${precio}`}</h3>
-      </div>
+          <h4>{`$${precio}`}</h4>
+    </div>
   )
 }
 
-export default Item
+export default MiniItem

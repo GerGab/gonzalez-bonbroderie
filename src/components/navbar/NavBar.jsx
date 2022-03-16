@@ -22,7 +22,7 @@ function NavBar() {
       <div className='NavBar'>
         <div>
           <button onClick={() => setMenuActive("Active")}><FontAwesomeIcon icon={faBars}/></button>
-          <input type="text" />
+          <input type="text" placeholder=''/>
         </div>
         <div>
           <button><FontAwesomeIcon icon={faUser}/></button>

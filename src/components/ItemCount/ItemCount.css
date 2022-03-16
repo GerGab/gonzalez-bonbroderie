@@ -4,8 +4,8 @@
     flex-direction: column;
     border: solid 1px grey;
     border-radius: 10px;
-    width: 80%;
-    height: 80px;
+    width: 60%;
+    height: 60px;
     justify-content: space-around;
     align-items: center;
 }

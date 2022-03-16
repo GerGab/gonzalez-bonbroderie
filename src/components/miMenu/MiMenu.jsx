@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faX} from '@fortawesome/free-solid-svg-icons/faX'
 import "./MiMenu.css"
+import { NavLink } from 'react-router-dom'
 
 function MiMenu({active, closeMenu}) {
 
@@ -12,7 +13,9 @@ function MiMenu({active, closeMenu}) {
           <li>Inicio</li>
           <li>Quienes Somos</li>
           <li>Cursos</li>
-          <li>Shop</li>
+          <NavLink to="/">
+            <li>Shop</li>
+          </NavLink>
         </div>
         <div className={`menuOut${active}`}>
           <button onClick={closeMenu} ></button>
