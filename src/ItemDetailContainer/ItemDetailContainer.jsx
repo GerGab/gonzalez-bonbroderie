@@ -15,12 +15,13 @@ function ItemDetailContainer() {
     const [similarProd,setSimilar] = useState([])
     const {id,categoria} = useParams()
     //funcionalidad de ItemCount para asignar cantidades al cart
+    const [_stock,setStock] = useState(0)
     const [_InCart,setInCart] = useState(0)
 
     //funcion para agregar al carrito la cantidad del itemCount
     const agregarCarrito = (count)=>{
 
-        console.log(count)
+        setStock(producto[0].stock-count)
         setInCart(count)
         }
 
@@ -42,7 +43,8 @@ function ItemDetailContainer() {
             setProducto(productos.filter(prod => prod.id === id));
             setSimilar(productos.filter(prod => prod.categoria === categoria));
       },[id,categoria])
-
+    
+    console.log(_stock)
   return (
     <>
     {loading ?
