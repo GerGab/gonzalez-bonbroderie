@@ -10,6 +10,7 @@ function ItemListContainer() {
   const [productos,setProductos] = useState([])
   const [categorias,setCategorias] = useState([])
 
+  // Filtra los productos para obtener las categorias sin duplicados
   function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
   }

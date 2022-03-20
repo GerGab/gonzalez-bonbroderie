@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { useEffect } from "react"
+import { Link } from 'react-router-dom'
 import "./ItemCount.css"
 
-function ItemCount({stock,nombre}) {
+function ItemCount({stock,inCart,agregarCarrito,id}) {
 
     const [count,setCount] = useState(1)
-    const [_stock,setStock] = useState(stock)
+   
+    // funcionabilidad de los botones + y -
     const sumCount = () =>{
-        if (count<_stock ){
+        if (count<stock ){
             setCount(count + 1);
         }
     }
@@ -16,36 +18,51 @@ function ItemCount({stock,nombre}) {
             setCount(count - 1);
         }
     }
-    const agregarCarrito = ()=>{
-        alert(`Se agregaron al carrito ${count} ${nombre}`)
-        setStock(_stock - count);
-        }
-    
-    useEffect(()=>{
-        _stock>0 ? setCount(1):setCount(0);
-    },[_stock])
-    useEffect(()=>{
-        setStock(stock);
-    },[stock,nombre])
 
-  return (
-    <div className='itemCount'>
-        {_stock>0 ? 
-        <>
-            <div className='counter'>
-                    
-                <button onClick={restCount}> <p>-</p> </button>
-                <p>{count}</p>
-                <button onClick={sumCount}> <p>+</p> </button>
-            </div>
-            <button onClick={agregarCarrito}>Agregar al Carrito</button>
-        </>
-        :
-        <>
+    //Intercambiabilidad sin Stock
+    const  SinStock = ()=>{
+        return(
             <div className='counter'>
                 Sin Stock
             </div>
+        )
+    }
+
+    const IrCarrito = ()=>{
+        return(
+            <>
+                <Link to='/Cart'>
+                    <button>Iniciar Compra</button>
+                </Link>
+            </>
+        )
+    }
+    const AgregarCarrito = ()=>{
+        return(
+            <>
+                <div className='counter'>
+                        
+                    <button onClick={restCount}> <p>-</p> </button>
+                    <p>{count}</p>
+                    <button onClick={sumCount}> <p>+</p> </button>
+                </div>
+                <button onClick={agregarCarrito}>Agregar al Carrito</button>
+            </>
+        )
+    }
+    useEffect(()=>{
+        setCount(1);
+    },[stock,inCart,id])
+
+  return (
+    <div className='itemCount'>
+
+        {stock>0 ? 
+        <>  
+            {inCart>0 ? <IrCarrito/>:<AgregarCarrito/>}
         </>
+        :
+        <SinStock/>
         }   
     </div>
   )

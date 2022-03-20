@@ -8,14 +8,27 @@ import MiniItemList from "../components/MiniItemList/MiniItemList"
 
 function ItemDetailContainer() {
 
+    // fetch de productos para construcción de ItemDetail
     const [loading,setLoading] = useState(true)
+    const [productos,setProductos] = useState([])
     const [producto,setProducto] = useState([])
     const [similarProd,setSimilar] = useState([])
-
     const {id,categoria} = useParams()
+    //funcionalidad de ItemCount para asignar cantidades al cart
+    //const [_stock,setStock] = useState(0)
+    const [_InCart,setInCart] = useState(0)
+
+    //funcion para agregar al carrito la cantidad del itemCount
+    const agregarCarrito = ()=>{
+        
+        //setStock(_stock - count);
+        setInCart(1)
+        }
+
 
     useEffect(()=>{
         getFetch.then( function (resp) {
+            setProductos(resp)
             setProducto(resp.filter(prod => prod.id === id));
             setSimilar(resp.filter(prod => prod.categoria === categoria))
         }
@@ -24,8 +37,12 @@ function ItemDetailContainer() {
         ).finally(()=>
           setLoading(false)
         )
+    },[])
+    useEffect(()=>{
+        productos.length>0 &&
+            setProducto(productos.filter(prod => prod.id === id));
+            setSimilar(productos.filter(prod => prod.categoria === categoria));
       },[id,categoria])
-
 
   return (
     <>
@@ -53,7 +70,11 @@ function ItemDetailContainer() {
                     </div>
                     <div className="horLine"></div>
                     <div className="cartInfo">
-                        <ItemCount stock={producto[0].stock} nombre={producto[0].nombre}/>
+                        <ItemCount 
+                            stock={producto[0].stock} 
+                            agregarCarrito={agregarCarrito}
+                            inCart ={_InCart}
+                            id={producto[0].id}/>
                         <h3>Medios de Envío</h3>
                         <div className="mailing">
                             <input type="text" placeholder="Código Postal" />
