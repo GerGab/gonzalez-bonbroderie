@@ -15,14 +15,13 @@ function ItemDetailContainer() {
     const [similarProd,setSimilar] = useState([])
     const {id,categoria} = useParams()
     //funcionalidad de ItemCount para asignar cantidades al cart
-    //const [_stock,setStock] = useState(0)
     const [_InCart,setInCart] = useState(0)
 
     //funcion para agregar al carrito la cantidad del itemCount
-    const agregarCarrito = ()=>{
-        
-        //setStock(_stock - count);
-        setInCart(1)
+    const agregarCarrito = (count)=>{
+
+        console.log(count)
+        setInCart(count)
         }
 
 
@@ -70,6 +69,7 @@ function ItemDetailContainer() {
                     </div>
                     <div className="horLine"></div>
                     <div className="cartInfo">
+
                         <ItemCount 
                             stock={producto[0].stock} 
                             agregarCarrito={agregarCarrito}
