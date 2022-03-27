@@ -1,0 +1,78 @@
+
+.CartContainer{
+    margin-top: 65px;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemCont{
+    width: 100%;
+}
+
+.totalCont{
+    width: 80%;
+    height: 200px;
+    border-top: solid 1px gray ;
+    margin: 20px 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    background-color: rgb(229, 197, 185,0.4) ;
+    background-clip: content-box;
+}
+
+.totComprar{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.totComprar button{
+    width: 180px;
+    height: 30px;
+    background-color: rgb(229, 197, 185) ;
+    border: none;
+    cursor: pointer;
+}
+.totComprar button:hover{
+    color: white;
+}
+
+.totComprar h2{
+    text-align: center;
+    font-size: 2.3rem;
+}
+
+.regalo{
+    margin-left: 20px;
+}
+.regalo label{
+    padding-left: 10px;
+}
+
+.cupon{
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: solid 1px gray;
+    padding: 15px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.cupon input{
+    height: 20px;
+    width: 100%;
+
+}

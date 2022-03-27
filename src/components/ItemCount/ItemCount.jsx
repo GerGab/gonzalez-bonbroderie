@@ -30,12 +30,15 @@ function ItemCount({stock,inCart,agregarCarrito,id}) {
 
     const IrCarrito = ()=>{
         return(
-            <>
+            <div className='seguirComprando'>
                 <Link to='/Cart'>
                     <button>Iniciar Compra</button>
                 </Link>
-            </>
-        )
+                <Link to='/'>
+                    <button>Seguir comprando</button>
+                </Link>
+            </div>
+            )
     }
     const AgregarCarrito = ()=>{
         return(
@@ -55,16 +58,21 @@ function ItemCount({stock,inCart,agregarCarrito,id}) {
     },[stock,inCart,id])
 
   return (
-    <div className='itemCount'>
+    
+    <>
+        {inCart ? 
+        <IrCarrito/>
+        :        
+        <div className='itemCount'>
 
-        {stock>0 ? 
-        <>  
-            {inCart>0 ? <IrCarrito/>:<AgregarCarrito/>}
-        </>
-        :
-        <SinStock/>
-        }   
-    </div>
+            {stock>0 ? 
+            <AgregarCarrito/>
+            :
+            <SinStock/>
+            }   
+        </div>
+        }           
+    </>
   )
 }
 

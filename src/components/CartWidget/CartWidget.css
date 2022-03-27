@@ -7,10 +7,11 @@
 }
 
 .num{
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     position: relative;
+    width: 16px;
     top: 6px;
-    left: -26px;
+    left: -29px;
     text-align: center; 
     color: white;
     z-index: 1;

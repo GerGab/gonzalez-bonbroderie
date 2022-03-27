@@ -11,25 +11,7 @@
     
 }
 
-.content{
-    display: flex;
-    padding: 20px 0;
-    flex-direction: row;
-    height: 100%;
-    width: 800px;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    background-color: white;
-}
 
-.products{
-    width: 50%;
-    height: 100%;
-    font-display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .similares{
     border-top: solid 1px gray;
@@ -45,92 +27,3 @@
     margin: 20px;
 }
 
-.productData{
-    width: 300px;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: left;
-}
-
-.mainItem{
-    width: 100%;
-}
-
-
-.reference{
-    display: flex;  
-    width: 100%;
-    flex-direction: row;
-    background-color: white;
-    justify-content: space-between;
-}
-
-.imagen{
-    width: 100%;
-}
-
-.horLine{
-    height: 1px;
-    border-top: solid 1px grey;
-    margin: 10px 0;
-}
-
-.title{
-    margin: 20px 0 2px 0;
-}
-
-.descrip{
-    margin: 5px 0;
-}
-
-.descrip p{
-    word-wrap: break-word;
-    width: 100%;
-    letter-spacing: 0.05rem;
-    font-size: 1.2rem;
-    font-family: 'Cormorant Garamond';
-}
-
-.mailing{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 10px 0;
-}
-.mailing button{
-    margin: 0 5px;
-    padding: 3px;
-    background-color: rgb(229, 197, 185);
-    border: none;
-    border-radius: 3px;
-}
-
-.mailing button:hover{
-    margin: 0 5px;
-    padding: 3px;
-    background-color: rgb(229, 197, 185);
-    border: none;
-    border-radius: 3px;
-    color: white;
-}
-
-.cartInfo{
-    height: 150px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: left;
-}
-
-.loading{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
