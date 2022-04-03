@@ -11,20 +11,8 @@ function CartContextProvider({children}) {
 
     const addToCart = (item) => {
         
-        let found = false
-        
-        cartList.forEach(prod =>{
-            if (prod.id === item.id){
-                prod.cantidad += item.cantidad
-                found = true
-            } 
-        })
-        if (!found){
-            setCartList([...cartList,item])
-        }else{
-            setCartList([...cartList])
-        }
-
+        let prod = cartList.filter(prod => prod.id === item.id)[0]
+        !prod && setCartList([...cartList,item]);
     }
 
     const reducirCant = ({id}) =>{
@@ -40,10 +28,7 @@ function CartContextProvider({children}) {
     }      
 
     const searchProduct = ({id}) => {
-        let found = false
-        cartList.forEach((prod)=>{
-            if (prod.id === id) {found = true;}
-        })
+        let found = cartList.filter(prod => prod.id === id)[0]
         found ? setProductInCart(true):setProductInCart(false)
     }
 
@@ -52,16 +37,14 @@ function CartContextProvider({children}) {
     }
 
     const removeItem = ({id}) =>{
-        console.log(id)
         let productos = cartList.filter(prod => prod.id!==id)
         setCartList([...productos])
     }
 
     useEffect(()=>{
-        let tot = 0
-        cartList.forEach(prod =>{
-            tot += prod.cantidad * prod.precio
-        })
+
+        let tot = cartList.reduce((tot,prod) => tot += prod.cantidad * prod.precio,
+        0);
         setTotal(tot)
     },[cartList])
 

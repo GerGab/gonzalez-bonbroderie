@@ -2,8 +2,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import "./ItemListContainer.css"
 import ItemList from "../components/ItemList/ItemList"
-import {getFetch} from "../helpers/fetchProd"
-
+import { collection, getDocs, getFirestore} from 'firebase/firestore'
 function ItemListContainer() {
 
   const [loading,setLoading] = useState(true)
@@ -14,17 +13,22 @@ function ItemListContainer() {
   function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
   }
+
   useEffect(()=>{
-    getFetch.then( function (resp){
-      setProductos(resp)
+
+    const db = getFirestore()
+    const queryCollection = collection(db,'items')
+    getDocs(queryCollection)
+    .then( function (resp) {
+      setProductos( resp.docs.map(producto=>({id:producto.id, ...producto.data()})))
       let allCat = []
-      resp.forEach(prod => {
-        allCat.push(prod.categoria);
+      resp.docs.forEach(prod => {
+        allCat.push(prod.data().categoria);
       });
       setCategorias(allCat.filter(onlyUnique))
-    }
       
-    ).catch(
+    })
+    .catch(
       err => console.log(err)
     ).finally(()=>
       setLoading(false)
