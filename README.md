@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Bonbroderie
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
 
-## Available Scripts
+Bonbroderie es un proyecto iniciado en el año 2021, consiste en la venta de materiales para bordados.
+También se desea implementar una modalidad de cursos online.
 
-In the project directory, you can run:
+## Usabilidad del sitio web.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Gif Shop](markdown/gif/GIF-Shop-BonBroderie.gif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Momentaneamente la pagina de inicio esta vinculada directamente al shop.
+En el shop el usuario podrá visualizar nuestros productos organizados por categoría.
+![Imagen del Shop](markdown/Shop.png)
+Al seleccionar un producto del listado se despliega el detalle del mismo. De esta forma el usuario puede seleccionar la cantidad que desee siempre y cuando haya stock del mismo.
+![Imagen de detalle](markdown/Detalle.png)
+A su vez el detalle trae consigo la posibilidad de ver otros productos de la misma categoría, para así poder navegar en el detalle de cada uno.
+![Imagen de similares](markdown/Similares.png)
+Si se desea volver al shop, en el menu hamburguesa el link Shop es el unico habilitado por el momento.
+![Imagen del menu](markdown/Menu.png)
+Una vez seleccionada la cantidad deseada del producto el contador se bloqueará y el usuario podrá:
 
-### `npm test`
+* Continuar con la compra mediante el botón que aparecerá para tal fin.
+* Continuar navengando entre los items pertenecientes a la misma categoría.
+* Volver al shop para continuar la compra de otros productos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tambien es posible navegar al shop desde cualquier parte del sitio web mediante el CartWidget que se encuentra en la esquina superior derecha. Asímismo este mostrará, en caso de existir items en el carrito, la cantidad total de productos seleccionados.
 
-### `npm run build`
+![Iamgen del CartWidget](markdown/CartWidget.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+En caso de acceder al carrito de compras, estando este vacío, nos mostrará un mensaje para volver al shop a seleccionar productos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Al haber seleccionado productos, estos se mostrarán en el carrito de compras. Por medio de este el usuario podrá manipular las cantidades deseadas o incluso eliminar aquellos que no crea sean necesarios.
+![Imagen del Carrito](markdown/Carrito.png)
+En el margen inferior se muestra la suma total que deberá abonar el usuario conforme los productos y las cantidades que haya seleccionado. Mediante el botón INICIAR COMPRA podrá realizar el pago de los productos.
+En caso de concretarse dicho pago se le informará mediante un Alert y será redirigido al shop para seguir eligiendo productos si asi lo desease.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Librerías y utilidades
 
-### `npm run eject`
+* [SweetAlert](https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html "Link SweetAlert")
+* [FontAwesome](https://fontawesome.com/ "Link FontAwesome")
+* [Google Fonts](https://fonts.google.com/ "Link Google Fonts")
+* [Firebase](https://firebase.google.com/products/firestore?gclid=CjwKCAjwi6WSBhA-EiwA6Niok7uNcjErA_kbiQ9whaoKua7WSBDyUdOMGS-l0SMWZFs6Dq-8--uaKxoCiBkQAvD_BwE&gclsrc=aw.ds "Link Firebase")
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Estado de la Implementación
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+La implementación del sitio no esta completa conforme los objetivos personales que propuse alcanzar. El estado de la implementación hasta el momento es la siguiente:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [x] Estética desarrolada del sitio.
+- [x] Shop con productos guardados en backend.
+- [x] Carro de compras.
+- [ ] Implementado el formulario de usuarios guardar los datos de los mismos en el backend.
+- [ ] Implementar MercadoPago como medio de pago.
+- [ ] Completar las paginas para presentación, cursos y creación de usuarios.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[^1]: volver al inicio.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
