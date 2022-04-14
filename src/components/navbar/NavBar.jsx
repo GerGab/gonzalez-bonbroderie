@@ -11,7 +11,7 @@ import UserWidget from '../UserWidget/UserWidget';
 
 function NavBar() {
 
-  const [menuActive,setMenuActive] = useState(true);
+  const [menuActive,setMenuActive] = useState(false);
 
   const closeMenu = () =>{
     setMenuActive(false);
