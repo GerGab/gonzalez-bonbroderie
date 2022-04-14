@@ -1,13 +1,14 @@
 # Bonbroderie
 
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
-
 Bonbroderie es un proyecto iniciado en el año 2021, consiste en la venta de materiales para bordados.
 También se desea implementar una modalidad de cursos online.
 
 ## Prueba nuestro demo!
 
-**DEMO**:  [Bonbroderie Site](bonbroderie.netlify.app)
+**DEMO** 
+[Bonbroderie Site](https://link-url-here.org)
+
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://bonbroderie.netlify.app)
 
 
 ## Usabilidad del sitio web.
