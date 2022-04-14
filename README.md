@@ -5,6 +5,11 @@
 Bonbroderie es un proyecto iniciado en el año 2021, consiste en la venta de materiales para bordados.
 También se desea implementar una modalidad de cursos online.
 
+## Prueba nuestro demo!
+
+**DEMO**:  [Bonbroderie Site](bonbroderie.netlify.app)
+
+
 ## Usabilidad del sitio web.
 
 Momentaneamente la pagina de inicio esta vinculada directamente al shop.
