@@ -27,7 +27,7 @@ function CartWidget() {
           {cantidad>0 ?
           <p className="num">{cantidad}</p>
           :
-          <p></p>
+          <p className="num">{' '}</p>
           }
         </div>
       </Link>

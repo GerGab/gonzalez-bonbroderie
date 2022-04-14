@@ -7,9 +7,6 @@ También se desea implementar una modalidad de cursos online.
 
 ## Usabilidad del sitio web.
 
-
-![Gif Shop](markdown/gif/GIF-Shop-BonBroderie.gif)
-
 Momentaneamente la pagina de inicio esta vinculada directamente al shop.
 En el shop el usuario podrá visualizar nuestros productos organizados por categoría.
 ![Imagen del Shop](markdown/Shop.png)
@@ -36,6 +33,16 @@ Al haber seleccionado productos, estos se mostrarán en el carrito de compras. P
 En el margen inferior se muestra la suma total que deberá abonar el usuario conforme los productos y las cantidades que haya seleccionado. Mediante el botón INICIAR COMPRA podrá realizar el pago de los productos.
 En caso de concretarse dicho pago se le informará mediante un Alert y será redirigido al shop para seguir eligiendo productos si asi lo desease.
 
+******
+**NOTA:**
+El sistema requiere que al momento de realizar la compra el usuario se encuentre identificado. En caso contrario se le solicitará identificarse, ya sea iniciando sesion con una cuenta existente o bien creando una nueva.
+****
+
+
+![Gif Shop](markdown/gif/GIF-Shop-BonBroderie.gif)
+
+
+
 ## Librerías y utilidades
 
 * [SweetAlert](https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html "Link SweetAlert")
@@ -50,7 +57,7 @@ La implementación del sitio no esta completa conforme los objetivos personales 
 - [x] Estética desarrolada del sitio.
 - [x] Shop con productos guardados en backend.
 - [x] Carro de compras.
-- [ ] Implementado el formulario de usuarios guardar los datos de los mismos en el backend.
+- [x] Implementado el formulario de usuarios guardar los datos de los mismos en el backend.
 - [ ] Implementar MercadoPago como medio de pago.
 - [ ] Completar las paginas para presentación, cursos y creación de usuarios.
 

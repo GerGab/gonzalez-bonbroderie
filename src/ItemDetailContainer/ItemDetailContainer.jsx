@@ -5,7 +5,6 @@ import "./ItemDetailContainer.css"
 import MiniItemList from "../components/MiniItemList/MiniItemList"
 import ItemDetail from "../components/ItemDetail/ItemDetail"
 import { collection, doc, getDoc, getDocs, getFirestore, query, where} from "firebase/firestore"
-//import { productos } from "../helpers/productos"      utilizado solo para cargar automaticamente los items en firebase, uso de addDoc
 
 function ItemDetailContainer() {
 
@@ -21,7 +20,6 @@ function ItemDetailContainer() {
         const db = getFirestore()
         const queryDoc = doc(db,'items',id)
         const queryCollection = collection(db,'items')
-        //productos.forEach(item =>{ addDoc(queryCollection,item)}) //utilizada solo para cargar los items en firebase
         const queryFilter = query(queryCollection,where('categoria','==',categoria))
         async function queries(){
             let categorias = await getDocs(queryFilter)

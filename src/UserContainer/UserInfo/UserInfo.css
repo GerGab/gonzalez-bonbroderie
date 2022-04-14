@@ -1,0 +1,66 @@
+.userInfo{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userInfo h2{
+    font-size: 1.5rem;
+    margin: 20px;
+}
+
+.selector{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sButton{
+    border: none;
+    background-color: rgb(229, 197, 185,0.6);
+    font-size: 1.5rem;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.sButtonActive{
+    border: none;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    background-color: rgb(229, 197, 185);
+}
+
+.sButton:hover{
+    color: white;
+}
+
+.queMostrar{
+    width: 80%;
+    padding: 20px;
+    background-color: rgb(229, 197, 185);
+}
+
+.queMostrar h2{
+    margin: 5px;
+}
+
+table{
+    width: 100%;
+}
+
+th{
+    text-align: left;
+}
+
+td{
+    width: 25%;
+    padding-top: 10px;
+}
+
+.datos{
+    width: 30%;
+}

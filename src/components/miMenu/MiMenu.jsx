@@ -6,18 +6,18 @@ import { NavLink } from 'react-router-dom'
 function MiMenu({active, closeMenu}) {
 
   return (
-    <div className={`menu${active}`}>
-        <div className={`menuBox${active}`}>
+    <div className={active ? "menuActive":"menu"}>
+        <div className={active ? "menuBoxActive":"menuBox"}>
           <button onClick={closeMenu} className={"closeButton"}><FontAwesomeIcon icon={faX} /></button>
           <h2>BonBroderie</h2>
           <li>Inicio</li>
           <li>Quienes Somos</li>
           <li>Cursos</li>
           <NavLink to="/">
-            <li>Shop</li>
+            <li onClick={closeMenu}>Shop</li>
           </NavLink>
         </div>
-        <div className={`menuOut${active}`}>
+        <div className={active ? "menuOutActive":"menuOut"}>
           <button onClick={closeMenu} ></button>
         </div>
       </div> 

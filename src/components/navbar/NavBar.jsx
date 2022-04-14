@@ -1,32 +1,32 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import './NavBar.css';
 import {} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faUser} from '@fortawesome/free-solid-svg-icons/faUser'
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars'
 import MiMenu from '../miMenu/MiMenu';
 import CartWidget from '../CartWidget/CartWidget'
+import UserWidget from '../UserWidget/UserWidget';
+
 
 
 function NavBar() {
 
-  let cantidad = 3;
-  const [menuActive,setMenuActive] = useState("");
+  const [menuActive,setMenuActive] = useState(true);
 
   const closeMenu = () =>{
-    setMenuActive("");
+    setMenuActive(false);
   }
 
   return (
     <>
       <div className='NavBar'>
         <div>
-          <button onClick={() => setMenuActive("Active")}><FontAwesomeIcon icon={faBars}/></button>
+          <button onClick={() => setMenuActive(true)}><FontAwesomeIcon icon={faBars}/></button>
           <input type="text" placeholder=''/>
         </div>
         <div>
-          <button><FontAwesomeIcon icon={faUser}/></button>
-          <CartWidget cantidad={cantidad}/>
+          <UserWidget/>
+          <CartWidget/>
         </div>
       </div>
       <MiMenu active={menuActive} closeMenu={closeMenu}/>

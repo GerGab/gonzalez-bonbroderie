@@ -6,6 +6,7 @@ import CartItem from './CartItem/CartItem'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import {useNavigate } from "react-router-dom";
+import { useUserContext } from '../Context/UserContext'
 
 
 
@@ -19,7 +20,7 @@ function CartContainer() {
 
   const {cartList,reducirCant,aumentarCant,removeItem,sumTotal,cleanCart} = useCartContext()
 
-  const usuario = {nombre:"German",email:"g@gmail.com",tel:"343536325"}   // usuario provisorio hasta crear pagina de usuarios
+  const {usuario} = useUserContext()
 
   const increase = (item)=>{
     aumentarCant({...item})
@@ -33,33 +34,41 @@ function CartContainer() {
       removeItem(item)
   }
 
+  const pedirLoggeo = () =>{
+    MySwal.fire({
+      title: <strong>Perdona, ¿quien eres?</strong>,
+      html: <i>Por favor inicia sesión o crea una cuenta para poder completar tu compra</i>,
+      icon: 'info'
+    }).then(()=>navigate("/User"))
+  }
+
   const comprar = async () =>{
-    // Incluir esto dentro de un then() una vez confirmado el pago en ML
+    
     let order = {comprador:usuario,items:cartList,total:sumTotal,fecha:{UTC:new Date(Date.now()).toLocaleString(),Timestamp:Date.now()}}
+
     const db = getFirestore()
+
+    // guardar orden de compra en DB
     const queryOrders = collection (db,'orders')
-    addDoc(queryOrders,order)
+    addDoc(queryOrders,order).catch(err => console.log(err))
+    
+    // corregir el stock a nuevas cantidades
     const queryItems = collection (db,"items")
     const queryStockAct = await query(queryItems, where(documentId(),"in",cartList.map(_item => _item.id)))
     const batch = writeBatch(db)
     await getDocs(queryStockAct)
-    .then(resp => 
-        resp.docs.forEach(resp_item => 
-          batch.update(resp_item.ref,
-            {stock: resp_item.data().stock - cartList.find(item => item.id === resp_item.id).cantidad})),
-      // Ajustar stock en base de datos.
-        MySwal.fire({
-            title: <strong>Compra exitosa!</strong>,
-            html: <i>Te invitamos a seguir comprando!</i>,
-            icon: 'success'
-          })
-        .then(() => {
-          // confirmado el guardar en base de datos, limpiar carrito y mostrar mensaje de compra exitosa.Regresar al Shop
-          batch.commit()
-          cleanCart();
-          navigate("/");
-        })
-        )
+    .then(resp => resp.docs.forEach(resp_item => batch.update(resp_item.ref,
+          {stock: resp_item.data().stock - cartList.find(item => item.id === resp_item.id).cantidad})))
+    .catch(err => console.log(err))    
+    batch.commit()
+    MySwal.fire({
+      title: <strong>Gracias por tu compra!</strong>,
+      html: <i>Te invitamos a seguir comprando! Podrás encontrar el numero de seguimiento en tu perfil.</i>,
+      icon: 'success'
+    }).then(
+      cleanCart(),
+      ()=>navigate("/")
+    )  
   }
 
 
@@ -93,7 +102,7 @@ function CartContainer() {
                 </div>
                 <div className='totComprar'>
                   <h2>{`TOTAL: $${sumTotal}`}</h2>
-                  <button onClick={comprar}>iniciar compra</button>
+                  <button onClick={usuario? comprar:pedirLoggeo}>iniciar compra</button>
                 </div>
               </div>
             </div>
