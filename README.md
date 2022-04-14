@@ -51,10 +51,10 @@ El sistema requiere que al momento de realizar la compra el usuario se encuentre
 
 ## Librerías y utilidades
 
-* [SweetAlert](https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html "Link SweetAlert")
-* [FontAwesome](https://fontawesome.com/ "Link FontAwesome")
-* [Google Fonts](https://fonts.google.com/ "Link Google Fonts")
-* [Firebase](https://firebase.google.com/products/firestore?gclid=CjwKCAjwi6WSBhA-EiwA6Niok7uNcjErA_kbiQ9whaoKua7WSBDyUdOMGS-l0SMWZFs6Dq-8--uaKxoCiBkQAvD_BwE&gclsrc=aw.ds "Link Firebase")
+* [SweetAlert](https://sweetalert2.github.io/recipe-gallery/sweetalert2-react.html "Link SweetAlert") v4.2.0 (utilizado para alertas)
+* [FontAwesome](https://fontawesome.com/ "Link FontAwesome") v0.1.17 (utilizada para iconos)
+* [Google Fonts](https://fonts.google.com/ "Link Google Fonts") (utilizado para fuentes y tipografías)
+* [Firebase](https://firebase.google.com/products/firestore?gclid=CjwKCAjwi6WSBhA-EiwA6Niok7uNcjErA_kbiQ9whaoKua7WSBDyUdOMGS-l0SMWZFs6Dq-8--uaKxoCiBkQAvD_BwE&gclsrc=aw.ds "Link Firebase") v9.6.10 (utilizada como base de datos backend.)
 
 ## Estado de la Implementación
 
